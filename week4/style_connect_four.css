@@ -1,0 +1,63 @@
+
+/* connect four */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-direction: column;
+    font-family: Pacifico, sans-serif;
+  }
+  
+  h1 {
+    color: navy;
+    /* text-decoration: underline tomato wavy; */
+    margin-bottom: 0.5rem;
+  }
+  
+  h2 {
+    margin: 0.25rem auto;
+    border: 1px solid #bbb;
+    padding: 0.75rem;
+    background-color: #eee;
+    width: 300px;
+    text-align: center;
+  }
+  
+  .grid {
+    display: grid;
+    border: 1px solid #bbb;
+    grid-gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    padding: 0.5rem;
+    margin-top: 20px;
+  }
+  
+  .grid div {
+    width: 40px;
+    height: 40px;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+  }
+  
+  .p1 {
+    background-color: tomato;
+    border-radius: 20px;
+  }
+  
+  .p2 {
+    background-color: blue;
+    color: white;
+    border-radius: 20px;
+  }
+  
+  .hidden {
+    display: none;
+  }
