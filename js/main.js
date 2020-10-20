@@ -20,7 +20,7 @@ const links = [
         url: "week5"
     },
     {
-        label: "Week6 notes and excersices",
+        label: "ToDo App",
         url: "week6"
     },
     {

@@ -1,0 +1,52 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.todo_container{
+  max-width: 320px;
+  margin: auto;
+  #todo_list{
+    list-style: none;
+    padding-left: 0;
+    li{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &.checked{
+        background-color: red;
+        span{
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+}
+h1{
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.add_task_container{
+  max-width: 320px;
+  margin: auto;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.btn{
+  padding: 5px 16px;
+  border-radius: 5px;
+  appearance: none;
+  border: 1px solid black;
+  &:focus{
+    outline: none;
+  }
+}
+.btnActive{
+  background-color: lighten($color: green, $amount: 10);
+  border-color: green;
+  border-width: 2px;
+}
+input[type="text"]{
+  padding: 5px 16px;
+}

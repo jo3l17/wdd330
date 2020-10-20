@@ -9,10 +9,8 @@ for (let i = 0, len = squares.length; i < len; i++)
         squares[i].onclick = () => {
             let index = main_index;
             while(!squares[index + 7].classList.contains('taken')){
-                console.log(index)
                 index+=7
             }
-            console.log(squares[index+7]);
             if (squares[index + 7].classList.contains('taken') && !squares[index].classList.contains('taken')) {
                 if (currentPlayer === 1) {
                     squares[index].classList.add('taken');
