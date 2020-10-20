@@ -12,7 +12,7 @@ body {
       justify-content: space-between;
       align-items: center; }
       .todo_container #todo_list li.checked {
-        background-color: red; }
+        background-color: #00b300; }
         .todo_container #todo_list li.checked span {
           text-decoration: line-through; }
 
@@ -44,3 +44,6 @@ h1 {
 
 input[type="text"] {
   padding: 5px 16px; }
+
+#message {
+  text-align: center; }

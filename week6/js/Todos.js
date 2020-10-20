@@ -3,6 +3,7 @@ import { findIndexTodoById, findTodoById, onTouch } from "./utilities.js";
 // import { renderTodoList } from './utilities.js';
 
 var todoList = null;
+var ActualFilter = "all";
 export default class Todos {
   constructor(key = 'todos', element) {
     this.element = element
@@ -16,8 +17,11 @@ export default class Todos {
   }
 
   listTodos() {
-    this.renderTodoList(this.todos, this.element)
-    this.todosRemaining()
+    if (this.todos != null) {
+      document.getElementById('message').textContent = "";
+      this.renderTodoList(this.todos, this.element)
+      this.todosRemaining()
+    }
   }
 
   completeTodo = (object) => {
@@ -25,6 +29,7 @@ export default class Todos {
     this.todos[index].completed = !object.completed;
     writeToLS('todos', JSON.stringify(this.todos));
     this.listTodos();
+    this.filterTodos(ActualFilter);
   }
 
   removeTodo = (object) => {
@@ -34,6 +39,7 @@ export default class Todos {
     this.todos.splice(index1, 1);
     writeToLS('todos', JSON.stringify(todoList));
     this.listTodos();
+    this.filterTodos(ActualFilter);
   }
 
   renderTodoList(list, element) {
@@ -59,27 +65,29 @@ export default class Todos {
 
   addTodo() {
     const task = document.getElementById("addTaskValue");
-    if(task.value==""){
+    if (task.value == "") {
       alert("todo can be empty");
       return
     }
     saveTodo(task.value, this.key)
     this.listTodos();
     task.value = "";
+    this.filterTodos(ActualFilter);
   }
 
   filterTodos(filter) {
-    if(filter=='active'){
+    ActualFilter = filter;
+    if (filter == 'active') {
       document.getElementById("filterAll").classList.remove("btnActive");
       document.getElementById("filterActive").classList.add("btnActive");
       document.getElementById("filterCompleted").classList.remove("btnActive");
       this.todos = todoList.filter(e => e.completed == false);
-    }else if(filter=='completed'){
+    } else if (filter == 'completed') {
       document.getElementById("filterAll").classList.remove("btnActive");
       document.getElementById("filterActive").classList.remove("btnActive");
       document.getElementById("filterCompleted").classList.add("btnActive");
       this.todos = todoList.filter(e => e.completed == true);
-    }else{
+    } else {
       document.getElementById("filterAll").classList.add("btnActive");
       document.getElementById("filterActive").classList.remove("btnActive");
       document.getElementById("filterCompleted").classList.remove("btnActive");
@@ -100,6 +108,10 @@ function saveTodo(task, key) {
     content: task,
     completed: false
   }
-  todoList.push(todo);
+  if (todoList != null) {
+    todoList.push(todo);
+  } else {
+    todoList = [todo]
+  }
   writeToLS(key, JSON.stringify(todoList));
 }
