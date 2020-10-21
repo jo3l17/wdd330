@@ -9,6 +9,10 @@ header h1, header h2{
     list-style: none;
     margin: 0;
     padding: 0;
+    margin: 30px;
+}
+#main_container ul li{
+    margin: 5px;
 }
 footer{
     background-color: aquamarine;
