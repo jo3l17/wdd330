@@ -1,6 +1,5 @@
 import { getfromLS, writeToLS } from "./ls.js";
-import { findIndexTodoById, findTodoById, onTouch } from "./utilities.js";
-// import { renderTodoList } from './utilities.js';
+import { findIndexTodoById, onTouch, qs } from "./utilities.js";
 
 var todoList = null;
 var ActualFilter = "all";
@@ -13,12 +12,12 @@ export default class Todos {
   }
 
   todosRemaining() {
-    document.getElementById("tasksLeft").textContent = this.todos.filter((obj) => obj.completed === false).length;
+    qs("#tasksLeft").textContent = this.todos.filter((obj) => obj.completed === false).length;
   }
 
   listTodos() {
     if (this.todos != null) {
-      document.getElementById('message').textContent = "";
+      qs('#message').textContent = "";
       this.renderTodoList(this.todos, this.element)
       this.todosRemaining()
     }
@@ -64,9 +63,8 @@ export default class Todos {
   }
 
   addTodo() {
-    const task = document.getElementById("addTaskValue");
+    const task = qs("#addTaskValue");
     if (task.value == "") {
-      alert("todo can be empty");
       return
     }
     saveTodo(task.value, this.key)
@@ -77,20 +75,17 @@ export default class Todos {
 
   filterTodos(filter) {
     ActualFilter = filter;
+    qs("#filterAll").classList.remove("btnActive");
+    qs("#filterActive").classList.remove("btnActive");
+    qs("#filterCompleted").classList.remove("btnActive");
     if (filter == 'active') {
-      document.getElementById("filterAll").classList.remove("btnActive");
-      document.getElementById("filterActive").classList.add("btnActive");
-      document.getElementById("filterCompleted").classList.remove("btnActive");
+      qs("#filterActive").classList.add("btnActive");
       this.todos = todoList.filter(e => e.completed == false);
     } else if (filter == 'completed') {
-      document.getElementById("filterAll").classList.remove("btnActive");
-      document.getElementById("filterActive").classList.remove("btnActive");
-      document.getElementById("filterCompleted").classList.add("btnActive");
+      qs("#filterCompleted").classList.add("btnActive");
       this.todos = todoList.filter(e => e.completed == true);
     } else {
-      document.getElementById("filterAll").classList.add("btnActive");
-      document.getElementById("filterActive").classList.remove("btnActive");
-      document.getElementById("filterCompleted").classList.remove("btnActive");
+      qs("#filterAll").classList.add("btnActive");
       this.todos = todoList;
     }
     this.listTodos();
