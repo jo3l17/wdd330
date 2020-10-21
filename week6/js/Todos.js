@@ -53,6 +53,7 @@ export default class Todos {
       li.id = `todo-${elementLi.id}`;
       span.textContent = elementLi.content;
       button.textContent = 'x';
+      button.classList.add("deleteBtn");
       checkbox.setAttribute('type', 'checkbox');
       checkbox.id = `checkbox_${elementLi.id}`;
       li.append(checkbox, span, button)
