@@ -1,0 +1,27 @@
+#details{
+    height: 60vh;
+    width: 95vw;
+    padding: 1em;
+    text-align: center;
+    border: 2px solid;
+    transform: translateX(100vw);
+    transition: all 0.3s;
+    flex: 1 0 90vw;
+}
+.container-flex{
+    display: flex;
+}
+#main{
+    transition: all 0.3s;
+    width: 100vw;
+    flex: 1 0 100vw;
+}
+#main div{
+    margin: 10px 0;
+}
+#pagintaion{
+    display: inline-block;
+}
+#pagination a{
+    margin: 0 5px;
+}

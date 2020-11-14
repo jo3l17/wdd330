@@ -1,0 +1,55 @@
+.hikeStyles li section{
+  /* display: grid; */
+  border: 1pt solid black;
+  margin-bottom: 1em;
+}
+.hikeStyles{
+  list-style: none;
+  padding: 0 1em;
+}
+.hikeStyles h2{
+  background-color: tomato;
+  text-align: center;
+}
+h1{
+  text-align: center;
+}
+.flex{
+  display: flex;
+}
+.image{
+  width: 50%;
+}
+.flex>div:nth-child(2){
+  width: 50%;
+  margin-left: 2em;
+  margin-right: 0;
+}
+.hidden{
+  display: none;
+}
+.modal{
+  background-color:white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: scroll;
+}
+.closeBtn{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+.comment-box{
+  display: flex;
+  margin-bottom: 50px;
+}
+.comment-box textarea{
+  width: 80%;
+  height: 50px;
+}
+.comment-box button{
+  width: 20%;
+}
