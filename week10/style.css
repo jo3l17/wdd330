@@ -1,0 +1,10 @@
+#quakeList{
+    list-style: none;
+}
+#quakeList li>div{
+    display: flex;
+    flex-direction: column;
+}
+#quakeList li{
+    margin-bottom: 20px;
+}

@@ -1,0 +1,33 @@
+form {
+    font: 1em sans-serif;
+    max-width: 320px;
+}
+
+p > label {
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea,
+fieldset {
+    width: 100%;
+    border: 1px solid #333;
+    box-sizing: border-box;
+}
+
+input:invalid,input {
+    border-left: 4px solid red;
+}
+input[type="radio"]:invalid{
+    box-shadow: 0 0 5px 1px red;
+}
+input:valid{
+    border-left: 4px solid green;
+}
+
+input:focus:invalid {
+    box-shadow: none;
+    border-left: 0px;
+}

@@ -37,6 +37,9 @@ body,html {
   border-color: #ffc600;
   box-shadow: 0 0 1rem #ffc600;
 }
+.played{
+  transform: translateY(10px);
+}
 
 kbd {
   display: block;

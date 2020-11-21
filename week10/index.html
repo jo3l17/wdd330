@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Local Quakes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <main>
+        <h1>Quake List</h1>
+        <div>
+            <label for="radius">Radius:</label>
+            <input type="number" id="radius" min="10" max="400">
+        </div>
+        <div>
+            <label for="InitialDate">Initial Date:</label>
+            <input type="date" id="InitialDate">
+        </div>
+        <div>
+            <label for="finalDate">Final Date:</label>
+            <input type="date" id="finalDate">
+        </div>
+        <button id="searchButton">
+            search
+        </button>
+        <ul id="quakeList"></ul>
+    </main>
+    <script src="index.js" type="module"></script>
+</body>
+
+</html>
