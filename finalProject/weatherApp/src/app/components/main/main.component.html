@@ -1,0 +1,41 @@
+<div class="container-fluid search-container">
+    <div class="row">
+        <div class="col-sm-12 col-lg-6">
+            <mat-form-field appearance="legacy" class="w-100">
+                <mat-label>Search for a city</mat-label>
+                <input #cityInput matInput placeholder="Utah" [formControl]="city" (keyup)="handleKeyUp($event)">
+                <mat-hint *ngIf="hint">{{hintMessage}}</mat-hint>
+                <mat-error *ngIf="city.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col-lg-6 col-sm-12 text-sm-center text-lg-left d-sm-block">
+            <button mat-raised-button color="primary" (click)="sendCity()" class="w-sm-100" >Search</button>
+        </div>
+    </div>
+    <div class="row">
+        <div *ngFor="let city of cities" class="col-sm-12 col-md-6 col-lg-4 mb-2 mt-2">
+            <mat-card class="city-card">
+                <mat-card-header class="city-card-header">
+                    <mat-card-title>{{city.name}}</mat-card-title>
+                    <mat-card-subtitle>{{city.country}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <img src="{{city.icon}}" alt="{{city.description}}">
+                    <h3>
+                        {{city.temp}}<sup>°C</sup>
+                    </h3>
+                    <p>
+                        {{city.description}}
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-stroked-button (click)="deleteCity(city.name)">Delete</button>
+                    <button *ngIf="city.favorite" mat-flat-button color="primary"
+                        (click)="favoritesCity(city.name,false)">Remove from favorites</button>
+                    <button *ngIf="!city.favorite" mat-stroked-button (click)="favoritesCity(city.name,true)">Add to
+                        favorites</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>

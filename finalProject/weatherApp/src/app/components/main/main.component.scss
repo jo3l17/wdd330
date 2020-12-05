@@ -1,0 +1,27 @@
+.search-container {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.example-header-image {
+    background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+    background-size: cover;
+}
+
+.city-card {
+    text-align: center;
+}
+
+.city-card-header {
+    justify-content: center;
+}
+
+.w-sm-100 {
+    width: 100%;
+}
+
+@media (min-width:992px) {
+    .w-sm-100 {
+        width: initial;
+    }
+}
