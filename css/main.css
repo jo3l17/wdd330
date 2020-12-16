@@ -1,3 +1,6 @@
+*{
+    font-family: 'Quicksand', sans-serif;
+}
 header{
     background-color: aquamarine;
     padding: 35px;
@@ -12,7 +15,16 @@ header h1, header h2{
     margin: 30px;
 }
 #main_container ul li{
-    margin: 5px;
+    margin: 10px;
+}
+#main_container ul li a{
+    display: block;
+    color: crimson;
+    text-decoration: none;
+}
+#main_container ul li a:hover{
+    color: darkorange;
+    text-decoration: none;
 }
 footer{
     background-color: aquamarine;

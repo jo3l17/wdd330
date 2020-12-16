@@ -1,4 +1,4 @@
-import shipController from "./ships";
+import shipController from "./ships.js";
 
 console.log(shipController.getShips());
 console.log(shipController.getShipByName("Executor"));
