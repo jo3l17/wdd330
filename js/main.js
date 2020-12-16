@@ -40,6 +40,10 @@ const links = [
         url: "week9/parcel/src"
     },
     {
+        label: "Week9 Team activity",
+        url: "week9/team activity/"
+    },
+    {
         label: "Week10 notes and excersices",
         url: "week10"
     },
